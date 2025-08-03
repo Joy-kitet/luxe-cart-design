@@ -1,0 +1,78 @@
+name: luxe_cart_flutter
+description: Premium luxury e-commerce Flutter application
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
+  
+  # Data Classes & Serialization
+  freezed: ^2.4.6
+  json_annotation: ^4.8.1
+  
+  # HTTP & API
+  dio: ^5.3.2
+  retrofit: ^4.0.3
+  
+  # Local Storage
+  shared_preferences: ^2.2.2
+  flutter_secure_storage: ^9.0.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  
+  # UI & Navigation
+  go_router: ^12.1.1
+  cached_network_image: ^3.3.0
+  flutter_svg: ^2.0.9
+  
+  # Utilities
+  equatable: ^2.0.5
+  uuid: ^4.1.0
+  intl: ^0.18.1
+  
+  # Icons & Fonts
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Code Generation
+  build_runner: ^2.4.7
+  freezed: ^2.4.6
+  json_serializable: ^6.7.1
+  riverpod_generator: ^2.3.9
+  retrofit_generator: ^8.0.4
+  
+  # Testing
+  mockito: ^5.4.2
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/icons/
+  
+  fonts:
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-Regular.ttf
+        - asset: assets/fonts/PlayfairDisplay-Bold.ttf
+          weight: 700
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+        - asset: assets/fonts/OpenSans-SemiBold.ttf
+          weight: 600
