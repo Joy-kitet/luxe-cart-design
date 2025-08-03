@@ -2,8 +2,10 @@ import { SearchBar } from "@/components/SearchBar";
 import { HeroBanner } from "@/components/HeroBanner";
 import { CategoryCard } from "@/components/CategoryCard";
 import { ProductCard } from "@/components/ProductCard";
-import { Bell, Star } from "lucide-react";
+import { Bell, Star, LogOut } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { Button } from "@/components/ui/button";
 
 // Import luxury product images
 import luxuryWatch from "@/assets/luxury-watch.jpg";
@@ -12,6 +14,7 @@ import luxuryPerfume from "@/assets/luxury-perfume.jpg";
 import luxurySunglasses from "@/assets/luxury-sunglasses.jpg";
 
 export const Home = () => {
+  const { user, signOut } = useAuth();
   const [cartCount, setCartCount] = useState(3);
 
   const featuredProducts = [
@@ -80,8 +83,20 @@ export const Home = () => {
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full" />
           </button>
           
-          <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-semibold">JD</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-semibold">
+                {user?.email?.charAt(0).toUpperCase() || "U"}
+              </span>
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={signOut}
+              className="text-muted-foreground hover:text-foreground"
+            >
+              <LogOut className="w-4 h-4" />
+            </Button>
           </div>
         </div>
       </div>
